@@ -8,6 +8,7 @@ var Collections = require("./lib/collections");
 var Countries = require("./lib/countries");
 var Events = require("./lib/events");
 var Videos = require("./lib/videos");
+var Products = require("./lib/products");
 
 const _hostName = new WeakMap();
 const _credentialOptions = new WeakMap();
@@ -101,6 +102,10 @@ class GettyImagesApi {
 
     downloads() {
         return new Downloads(this.creds, this.hostName);
+    }
+
+    products() {
+        return new Products(this.creds, this.hostName);
     }
 }
 
