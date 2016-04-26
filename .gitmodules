@@ -1,4 +1,4 @@
 
 [submodule "features"]
 	path = features
-	url = https://github.com/gettyimages/gettyimages-api_bdd.git
+	url = https://github.com/AdamMcCormick/gettyimages-api_bdd.git
