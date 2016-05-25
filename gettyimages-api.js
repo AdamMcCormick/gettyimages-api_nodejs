@@ -90,8 +90,8 @@ class GettyImagesApi {
         return new Events(this.creds, this.hostName);
     }
 
-    downloads() {
-        return new Downloads(this.creds, this.hostName);
+    downloads(overrideCredentials) {
+        return new Downloads(this.creds, this.hostName, overrideCredentials);
     }
 
     products() {
