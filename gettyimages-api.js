@@ -9,6 +9,7 @@ var Countries = require("./lib/countries");
 var Events = require("./lib/events");
 var Videos = require("./lib/videos");
 var Products = require("./lib/products");
+var Sets = require("./lib/sets");
 
 const _hostName = new WeakMap();
 const _credentialOptions = new WeakMap();
