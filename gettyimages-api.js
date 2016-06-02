@@ -98,6 +98,10 @@ class GettyImagesApi {
     products() {
         return new Products(this.creds, this.hostName);
     }
+
+    sets() {
+        return new Sets(this.creds, this.hostName);
+    }
 }
 
 module.exports = GettyImagesApi;
