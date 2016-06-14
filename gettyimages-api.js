@@ -1,15 +1,18 @@
 "use strict";
-var Credentials = require("./lib/credentials");
-var Downloads = require("./lib/downloads");
-var Images = require("./lib/images");
-var SdkException = require("./lib/sdkexception");
-var Search = require("./lib/search");
+
 var Collections = require("./lib/collections");
 var Countries = require("./lib/countries");
+var Credentials = require("./lib/credentials");
+var Downloads = require("./lib/downloads");
 var Events = require("./lib/events");
-var Videos = require("./lib/videos");
+var Images = require("./lib/images");
 var Products = require("./lib/products");
+var Purchases = require("./lib/purchases");
+var Search = require("./lib/search");
 var Sets = require("./lib/sets");
+var Videos = require("./lib/videos");
+
+var SdkException = require("./lib/sdkexception");
 
 const _hostName = new WeakMap();
 const _credentialOptions = new WeakMap();
@@ -33,10 +36,10 @@ class GettyImagesApi {
     get hostName() {
         return _hostName.get(this);
     }
-    
     set hostName(value) {
         _hostName.set(this,value);
     }
+
     constructor(credentials, hostName) {
         if (!credentials.apiKey) {
             throw new SdkException("must specify an apiKey");
@@ -97,6 +100,10 @@ class GettyImagesApi {
 
     products() {
         return new Products(this.creds, this.hostName);
+    }
+
+    purchases() {
+        return new Purchases(this.creds, this.hostName);
     }
 
     sets() {
